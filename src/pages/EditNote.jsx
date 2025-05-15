@@ -45,10 +45,6 @@ export function EditNote() {
                             <input
                                 value={newTitle}
                                 onChange={(e) => {
-                                    if(!e.target.value.trim()) {
-                                        alert("Field Title harus diisi.");
-                                        return
-                                    }
                                     setNewTitle(e.target.value)
                                 }}
                                 type="text" />
@@ -67,10 +63,6 @@ export function EditNote() {
                                 }}
                                 value={newText}
                                 onChange={(e) => {
-                                    if(!e.target.value.trim()) {
-                                        alert("Field text harus diisi.");
-                                        return
-                                    }
                                     setNewText(e.target.value)}}
 
                                 placeholder="Tulis catatan di sini..."
