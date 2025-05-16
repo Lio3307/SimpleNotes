@@ -11,7 +11,7 @@ export function ListNotes() {
     return (
         <>
             <div className="container d-flex flex-column">
-                {notesData.map((notes) => (
+                {notesData.length > 0 ? (notesData.map((notes) => (
                     <div
                         className="card my-2 shadow-sm"
                         key={notes.noteId}
@@ -48,7 +48,7 @@ export function ListNotes() {
                             >Delete</button>
                         </div>
                     </div>
-                ))}
+                ))) : <h3 className="text-center">Tidak Ada Catatan</h3>}
             </div>
         </>
     )
