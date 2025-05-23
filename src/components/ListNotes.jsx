@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import { useNotesContext } from "../utils/notesContext"
 
-export function ListNotes() {
-    const { notesData, removeNotes } = useNotesContext()
+export function ListNotes({data}) {
+    const { removeNotes } = useNotesContext()
     const handleRemove = (id) => {
         const confirmDelete = window.confirm("Are you sure to delete this note?");
         if (!confirmDelete) return
@@ -11,7 +11,7 @@ export function ListNotes() {
     return (
         <>
             <div className="container d-flex flex-column">
-                {notesData.length > 0 ? (notesData.map((notes) => (
+                {data.length > 0 ? (data.map((notes) => (
                     <div
                         className="card my-2 shadow-sm"
                         key={notes.noteId}
